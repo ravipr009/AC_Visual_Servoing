@@ -1,0 +1,4 @@
+universal_robot/ur10_e_moveit_config
+/home/ravi/classic_ur_ws/devel/.private/ur10_e_moveit_config/lib/pkgconfig/ur10_e_moveit_config.pc /home/ravi/classic_ur_ws/devel/lib/pkgconfig/ur10_e_moveit_config.pc
+/home/ravi/classic_ur_ws/devel/.private/ur10_e_moveit_config/share/ur10_e_moveit_config/cmake/ur10_e_moveit_configConfig-version.cmake /home/ravi/classic_ur_ws/devel/share/ur10_e_moveit_config/cmake/ur10_e_moveit_configConfig-version.cmake
+/home/ravi/classic_ur_ws/devel/.private/ur10_e_moveit_config/share/ur10_e_moveit_config/cmake/ur10_e_moveit_configConfig.cmake /home/ravi/classic_ur_ws/devel/share/ur10_e_moveit_config/cmake/ur10_e_moveit_configConfig.cmake

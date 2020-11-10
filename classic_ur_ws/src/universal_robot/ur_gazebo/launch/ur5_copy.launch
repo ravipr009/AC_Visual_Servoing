@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="limited" default="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
+  <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
+  <arg name="gui" default="true" doc="Starts gazebo gui" />
+  
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="worlds/empty.world"/>
+   <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gui)"/>
+<!--<arg name="paused" value="true"/>
+<arg name="verbose" value="false"/>
+<arg name="use_sim_time" value="true"/>
+<arg name="gui" value="true"/>
+<arg name="headless" value="false"/>
+<arg name="debug" value="false"/>
+ <arg name="extra_gazebo_args" value="-s libgazebo_world_plugin_loader.so"/-->
+
+  </include>
+
+  <!-- send robot urdf to param server -->
+  <include file="$(find ur_description)/launch/ur5_upload.launch">
+    <arg name="limited" value="$(arg limited)"/>
+  </include>
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 1.0" respawn="false" output="screen" />
+<node name="object1" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_gazebo)/resources/red_box.urdf -urdf -model red_box -y 0.7 -x 0.2 -z 0.2" />
+
+  <!--<include file="$(find ur_gazebo)/launch/controller_utils.launch"/>-->
+
+<group ns="/ur5">
+
+  <rosparam file="$(find ur_gazebo)/controller/arm_controller_ur5.yaml" command="load"/>
+  <node name="arm_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/ur5" args="--namespace=/ur5 joint_state_controller joint1_position_controller joint2_position_controller joint3_position_controller joint4_position_controller joint5_position_controller joint6_position_controller 
+--timeout 60"/>
+
+</group>
+
+</launch>

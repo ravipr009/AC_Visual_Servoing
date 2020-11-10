@@ -1,0 +1,4 @@
+universal_robot/ur_description
+/home/ravi/classic_ur_ws/devel/.private/ur_description/lib/pkgconfig/ur_description.pc /home/ravi/classic_ur_ws/devel/lib/pkgconfig/ur_description.pc
+/home/ravi/classic_ur_ws/devel/.private/ur_description/share/ur_description/cmake/ur_descriptionConfig-version.cmake /home/ravi/classic_ur_ws/devel/share/ur_description/cmake/ur_descriptionConfig-version.cmake
+/home/ravi/classic_ur_ws/devel/.private/ur_description/share/ur_description/cmake/ur_descriptionConfig.cmake /home/ravi/classic_ur_ws/devel/share/ur_description/cmake/ur_descriptionConfig.cmake

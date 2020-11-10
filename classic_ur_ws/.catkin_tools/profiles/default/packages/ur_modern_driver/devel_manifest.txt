@@ -1,0 +1,6 @@
+ur_modern_driver
+/home/ravi/classic_ur_ws/devel/.private/ur_modern_driver/lib/libur_hardware_interface.so /home/ravi/classic_ur_ws/devel/lib/libur_hardware_interface.so
+/home/ravi/classic_ur_ws/devel/.private/ur_modern_driver/lib/ur_modern_driver/ur_driver /home/ravi/classic_ur_ws/devel/lib/ur_modern_driver/ur_driver
+/home/ravi/classic_ur_ws/devel/.private/ur_modern_driver/lib/pkgconfig/ur_modern_driver.pc /home/ravi/classic_ur_ws/devel/lib/pkgconfig/ur_modern_driver.pc
+/home/ravi/classic_ur_ws/devel/.private/ur_modern_driver/share/ur_modern_driver/cmake/ur_modern_driverConfig-version.cmake /home/ravi/classic_ur_ws/devel/share/ur_modern_driver/cmake/ur_modern_driverConfig-version.cmake
+/home/ravi/classic_ur_ws/devel/.private/ur_modern_driver/share/ur_modern_driver/cmake/ur_modern_driverConfig.cmake /home/ravi/classic_ur_ws/devel/share/ur_modern_driver/cmake/ur_modern_driverConfig.cmake

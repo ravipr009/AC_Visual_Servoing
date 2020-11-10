@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="ur_arm_gazebo" params="prefix">
+
+    <gazebo reference="${prefix}shoulder_link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="${prefix}upper_arm_link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="${prefix}forearm_link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="${prefix}wrist_1_link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="${prefix}wrist_3_link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="${prefix}wrist_2_link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="${prefix}ee_link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+  </xacro:macro>
+
+
+  <gazebo reference="camera">
+    <material>Gazebo/Green</material>
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+      </camera>
+  </sensor>
+      <plugin name="$camera_controller" filename="libgazebo_ros_openni_kinect.so">
+    <baseline>0.2</baseline>
+    <alwaysOn>true</alwaysOn>
+    <updateRate>1.0</updateRate>
+    <cameraName>$camera1_ir</cameraName>
+    <imageTopicName>/$camera1/depth/image_raw</imageTopicName>
+    <cameraInfoTopicName>/$camera1/depth/camera_info</cameraInfoTopicName>
+    <depthImageTopicName>/$camera1/depth/image_raw</depthImageTopicName>
+    <depthImageInfoTopicName>/$camera1/depth/camera_info</depthImageInfoTopicName>
+    <pointCloudTopicName>/$camera1/depth/points</pointCloudTopicName>
+    <frameName>$camera_link</frameName>
+    <pointCloudCutoff>0.5</pointCloudCutoff>
+    <distortionK1>0.00000001</distortionK1>
+    <distortionK2>0.00000001</distortionK2>
+    <distortionK3>0.00000001</distortionK3>
+    <distortionT1>0.00000001</distortionT1>
+    <distortionT2>0.00000001</distortionT2>
+    <CxPrime>0</CxPrime>
+    <Cx>0</Cx>
+    <Cy>0</Cy>
+    <focalLength>0</focalLength>
+    <hackBaseline>0</hackBaseline>
+  </plugin>
+  
+  </gazebo>
+
+</robot>
